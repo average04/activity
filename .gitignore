@@ -1,0 +1,5 @@
+Activity/.vs/
+Activity/Activity.API/obj/
+Activity/Activity.Application/obj/
+Activity/Activity.Domain/obj/
+Activity/Activity.Infrastructure/obj/
