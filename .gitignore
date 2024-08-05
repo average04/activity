@@ -3,3 +3,7 @@ Activity/Activity.API/obj/
 Activity/Activity.Application/obj/
 Activity/Activity.Domain/obj/
 Activity/Activity.Infrastructure/obj/
+Activity/Activity.API/bin/
+Activity/Activity.Application/bin/
+Activity/Activity.Domain/bin/
+Activity/Activity.Infrastructure/bin/
