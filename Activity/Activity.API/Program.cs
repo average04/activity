@@ -13,11 +13,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// TO REFACTOR
-builder.Services.AddDbContext<ApplicationDbContext>((sp, options) =>
-{
-    options.UseMySql(EnvironmentVariables.ConnectionString, ServerVersion.AutoDetect(EnvironmentVariables.ConnectionString));
-});
+// TO ADD MORE SERVICE
+builder.Services.AddInfrastructureServices(EnvironmentVariables.ConnectionString);
 
 var app = builder.Build();
 
