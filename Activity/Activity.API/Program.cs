@@ -1,6 +1,7 @@
 using Activity.API;
 using Activity.Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,8 +14,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
 // TO ADD MORE SERVICE
-builder.Services.AddInfrastructureServices(EnvironmentVariables.ConnectionString);
+builder.Services.AddApplicationServices(builder.Configuration)
+    .AddInfrastructureServices(EnvironmentVariables.ConnectionString);
+
 
 var app = builder.Build();
 

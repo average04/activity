@@ -2,7 +2,7 @@
 
 public class User : Entity<Guid>
 {
-    public string Name { get; private set; } = default!;
+    public string Name { get; set; } = default!;
     public decimal Weight { get; set; }
     public decimal Height { get; set; }
     public DateOnly BirthDate { get; set; }
