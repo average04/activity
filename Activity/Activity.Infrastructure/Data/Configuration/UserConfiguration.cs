@@ -11,10 +11,12 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
             .IsRequired();
 
         builder.Property(c => c.Weight)
-            .IsRequired();
+            .IsRequired()
+            .HasPrecision(5, 2);
 
         builder.Property(c => c.Height)
-            .IsRequired();
+            .IsRequired()
+            .HasPrecision(5, 2); 
 
         builder.Property(c => c.BirthDate)
             .IsRequired();
