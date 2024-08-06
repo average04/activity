@@ -1,4 +1,4 @@
-﻿namespace Activity.Application.Services.User.Create;
+﻿namespace Activity.Application.Services.User;
 
 public record UpdateUserRequest(Guid Id, string Name, decimal Weight, decimal Height, DateOnly BirthDate)
     : IRequest<UpdateUserResponse>;

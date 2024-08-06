@@ -1,6 +1,5 @@
 using Activity.API.Controllers.Base;
-using Activity.Application.Services.User.Create;
-using System.ComponentModel;
+using Mapster;
 
 namespace Activity.API.Controllers;
 
@@ -17,12 +16,14 @@ public class UserController : BaseController
     /// <summary>
     /// Create user
     /// </summary>
-    /// <param name="request">Create user request</param>
+    /// <param name="body">Create user request body</param>
     /// <returns></returns>
     [HttpPost("user")]
-    public async Task<IActionResult> CreateUser([FromBody] CreateUserRequest request)
+    public async Task<IActionResult> CreateUser([FromBody] CreateUserRequestBody body)
     {
+        var request = body.Adapt<CreateUserRequest>();
         var response = await Mediator.Send(request);
+
         return Created($"{Request.Path.Value}/{response.Id}", response);
     }
 

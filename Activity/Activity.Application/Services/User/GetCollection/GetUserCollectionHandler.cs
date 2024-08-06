@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.EntityFrameworkCore;
-
-namespace Activity.Application.Services.User.Create;
+﻿namespace Activity.Application.Services.User;
 
 public class GetUserCollectionHandler : IRequestHandler<GetUserCollectionRequest, IEnumerable<GetUserCollectionResponse>>
 {

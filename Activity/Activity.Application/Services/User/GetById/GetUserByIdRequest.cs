@@ -1,4 +1,4 @@
-﻿namespace Activity.Application.Services.User.Create;
+﻿namespace Activity.Application.Services.User;
 
 public record GetUserByIdRequest(Guid Id)
     : IRequest<GetUserByIdResponse>;

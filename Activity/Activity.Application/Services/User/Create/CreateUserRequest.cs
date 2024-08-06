@@ -1,4 +1,4 @@
-﻿namespace Activity.Application.Services.User.Create;
+﻿namespace Activity.Application.Services.User;
 
 public record CreateUserRequest(string Name, decimal Weight, decimal Height, DateOnly BirthDate)
     : IRequest<CreateUserResponse>;

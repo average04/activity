@@ -1,5 +1,4 @@
 using Activity.API.Controllers.Base;
-using Activity.Application.Services.Activity;
 
 namespace Activity.API.Controllers;
 

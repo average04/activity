@@ -1,4 +1,4 @@
-﻿namespace Activity.API.Controllers.Request;
+﻿namespace Activity.API.Controllers.RequestBody;
 
 public record UpdateActivityRequestBody(
     Guid UserId,
