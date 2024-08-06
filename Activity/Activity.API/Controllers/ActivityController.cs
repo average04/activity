@@ -69,5 +69,20 @@ public class ActivityController : BaseController
 
         return response != null ? Ok(response) : NoContent();
     }
+
+    /// <summary>
+    /// Update activity
+    /// </summary>
+    /// <param name="id">Activity id</param>
+    /// <param name="body">Update activity request body</param>
+    /// <returns></returns>
+    [HttpPut("activity/{id}")]
+    public async Task<IActionResult> UpdateActivity([FromRoute] Guid id, [FromBody] UpdateActivityRequestBody body)
+    {
+        var request = new UpdateActivityRequest(id, body.UserId, body.Location, body.StartTime, body.EndTime, body.Distance);
+        var response = await Mediator.Send(request);
+
+        return Ok(response);
+    }
 }
 
