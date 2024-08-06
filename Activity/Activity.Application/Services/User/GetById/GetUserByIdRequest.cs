@@ -12,7 +12,7 @@ public record GetUserByIdResponse(
     decimal Height,
     DateOnly BirthDate,
     int Age,
-    decimal BMI);
+    decimal BMI) : UserDto(Name, Weight, Height, BirthDate, Age, BMI);
 
 public class GetUserByIdRequestValidator : AbstractValidator<GetUserByIdRequest>
 {

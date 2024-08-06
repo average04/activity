@@ -2,7 +2,7 @@
 
 namespace Activity.Application.Services.User.Create;
 
-public record CreateUserRequest(string Name, decimal Weight, decimal Height, DateTime BirthDate)
+public record CreateUserRequest(string Name, decimal Weight, decimal Height, DateOnly BirthDate)
     : IRequest<CreateUserResponse>;
 
 public record CreateUserResponse(Guid Id);

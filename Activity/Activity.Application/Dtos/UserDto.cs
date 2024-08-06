@@ -3,4 +3,6 @@ public record UserDto(
     string Name,
     decimal Weight,
     decimal Height,
-    DateOnly BirthDate);
+    DateOnly BirthDate,
+    int Age,
+    decimal BMI);

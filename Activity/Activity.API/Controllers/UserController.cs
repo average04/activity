@@ -60,5 +60,17 @@ public class UserController : BaseController
         var result = await Mediator.Send(new GetUserCollectionRequest());
         return result != null ? Ok(result) : NoContent();
     }
+
+    /// <summary>
+    /// Update user
+    /// </summary>
+    /// <param name="updateUser">Update user request</param>
+    /// <returns></returns>
+    [HttpPut("user")]
+    public async Task<IActionResult> GetUsers(UpdateUserRequest updateUser)
+    {
+        var result = await Mediator.Send(updateUser);
+        return Ok(result);
+    }
 }
 

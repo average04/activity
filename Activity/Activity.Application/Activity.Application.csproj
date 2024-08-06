@@ -8,8 +8,8 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="Helper\" />
     <Folder Include="Services\Activity\" />
-    <Folder Include="Services\User\Update\" />
   </ItemGroup>
 
   <ItemGroup>
