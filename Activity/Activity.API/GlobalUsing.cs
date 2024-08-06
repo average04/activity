@@ -7,3 +7,4 @@ global using Activity.Infrastructure;
 global using HealthChecks.UI.Client;
 global using Activity.Application.Exceptions;
 global using Microsoft.AspNetCore.Mvc;
+global using Activity.API.Controllers.Request;

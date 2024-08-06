@@ -29,8 +29,6 @@ public static class ServiceExtension
 
         services.AddHealthChecks();
 
-        services.AddRouting(options => options.LowercaseUrls = true);
-
         return services;
     }
 
