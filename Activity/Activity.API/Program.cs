@@ -1,3 +1,5 @@
+using Serilog;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Initialize environment variables
@@ -7,6 +9,9 @@ builder.Services
     .AddApiServices()
     .AddApplicationServices()
     .AddInfrastructureServices(EnvironmentVariables.ConnectionString);
+
+builder.Host.UseSerilog((context, configuration) =>
+    configuration.ReadFrom.Configuration(context.Configuration));
 
 
 var app = builder.Build();

@@ -1,4 +1,5 @@
 ﻿using Activity.API.ExceptionHandler;
+using Serilog;
 
 namespace Activity.API;
 
@@ -13,6 +14,8 @@ public static class ServiceExtension
         services.AddExceptionHandler<CustomExceptionHandler>();
         services.AddHealthChecks();
 
+       
+
         return services;
     }
 
@@ -24,6 +27,8 @@ public static class ServiceExtension
             {
                 ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
             });
+
+        app.UseSerilogRequestLogging();
 
         app.UseHttpsRedirection();
 
