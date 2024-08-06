@@ -10,3 +10,4 @@ global using Activity.Application.Behavior;
 global using Microsoft.Extensions.DependencyInjection;
 global using Activity.Infrastructure.Data;
 global using System.Reflection;
+global using Activity.Application.Exceptions;

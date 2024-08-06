@@ -1,10 +1,8 @@
 using Activity.API.Controllers.Base;
-using Activity.API.ExceptionHandler.Exceptions;
 using Activity.Application.Services.User.Create;
-using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel;
 
 namespace Activity.API.Controllers;
-
 
 public class UserController : BaseController
 {
@@ -16,11 +14,30 @@ public class UserController : BaseController
         _logger = logger;
     }
 
+    /// <summary>
+    /// Create user
+    /// </summary>
+    /// <param name="request">Create user request</param>
+    /// <returns></returns>
     [HttpPost(Name = "user")]
     public async Task<IActionResult> CreateUser([FromBody] CreateUserRequest request)
     {
         var response = await Mediator.Send(request);
         return Created($"{Request.Path.Value}/{response.Id}", response);
     }
+
+    /// <summary>
+    /// Delete user
+    /// </summary>
+    /// <param name="id">User id</param>
+    /// <returns></returns>
+    [HttpDelete(Name = "user/{id}")]
+    public async Task<IActionResult> DeleteUser(Guid id)
+    {
+        await Mediator.Send(new DeleteUserRequest(id));
+        return NoContent();
+    }
+
+
 }
 

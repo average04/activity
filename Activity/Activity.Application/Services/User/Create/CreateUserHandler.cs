@@ -1,9 +1,9 @@
 ﻿namespace Activity.Application.Services.User.Create;
 
-public class CreateActionByProcessIdHandler : IRequestHandler<CreateUserRequest, CreateUserResponse>
+public class CreateUserHandler : IRequestHandler<CreateUserRequest, CreateUserResponse>
 {
     private readonly IApplicationDbContext _dbContext;
-    public CreateActionByProcessIdHandler(IApplicationDbContext dbContext)
+    public CreateUserHandler(IApplicationDbContext dbContext)
     {
         _dbContext = dbContext;
     }

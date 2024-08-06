@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Activity.API.ExceptionHandler.Exceptions;
 
 namespace Activity.API.ExceptionHandler;
 

@@ -1,4 +1,4 @@
-﻿namespace Activity.API.ExceptionHandler.Exceptions;
+﻿namespace Activity.Application.Exceptions;
 
 public class InternalServerException : Exception
 {

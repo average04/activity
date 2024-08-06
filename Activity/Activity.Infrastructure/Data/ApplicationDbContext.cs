@@ -10,6 +10,11 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     public DbSet<User> Users => Set<User>();
     public DbSet<Domain.Activity> Activities => Set<Domain.Activity>();
 
+    public Task<int> SaveChangesAsync(CancellationToken? cancellationToken)
+    {
+       return SaveChangesAsync();
+    }
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
