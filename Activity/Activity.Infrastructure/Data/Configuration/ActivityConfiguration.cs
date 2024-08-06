@@ -6,6 +6,11 @@ public class ActivityConfiguration : IEntityTypeConfiguration<Domain.Activity>
     {
         builder.HasKey(c => c.Id);
 
+        builder.HasOne<User>()
+          .WithMany()
+          .HasForeignKey(o => o.UserId)
+          .IsRequired();
+
         builder.Property(c => c.Location)
             .HasMaxLength(255)
             .IsRequired();

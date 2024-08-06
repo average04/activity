@@ -2,10 +2,11 @@
 
 public class Activity : Entity<Guid>
 {
-    public string Location { get; private set; } = default!;
-    public DateTime StartTime { get; private set; }
-    public DateTime EndTime { get; private set; }
-    public double Distance { get; private set; }
+    public Guid UserId { get; set; }
+    public string Location { get; set; } = default!;
+    public DateTime StartTime { get; set; }
+    public DateTime EndTime { get; set; }
+    public double Distance { get; set; }
     public TimeSpan Duration
     {
         get
