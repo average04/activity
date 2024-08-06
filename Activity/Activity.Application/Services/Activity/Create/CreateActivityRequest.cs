@@ -1,4 +1,4 @@
-﻿namespace Activity.Application.Services.User.Create;
+﻿namespace Activity.Application.Services.Activity;
 
 public record CreateActivityRequest(
     Guid UserId,
@@ -22,6 +22,8 @@ public class CreateActivityRequestValidator : AbstractValidator<CreateActivityRe
         RuleFor(x => x.StartTime)
             .NotEmpty();
         RuleFor(x => x.EndTime)
+            .NotEmpty();
+        RuleFor(x => x.Distance)
             .NotEmpty();
     }
 }

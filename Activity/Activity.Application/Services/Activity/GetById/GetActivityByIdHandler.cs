@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata.Ecma335;
-
-namespace Activity.Application.Services.User.Create;
+﻿namespace Activity.Application.Services.Activity;
 
 public class GetActivityByIdHandler : IRequestHandler<GetActivityByIdRequest, GetActivityByIdResponse>
 {

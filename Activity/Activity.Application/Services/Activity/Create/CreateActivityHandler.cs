@@ -1,4 +1,4 @@
-﻿namespace Activity.Application.Services.User.Create;
+﻿namespace Activity.Application.Services.Activity;
 
 public class CreateActivityHandler : IRequestHandler<CreateActivityRequest, CreateActivityResponse>
 {

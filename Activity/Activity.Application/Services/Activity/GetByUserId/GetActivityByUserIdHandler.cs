@@ -1,7 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Reflection.Metadata.Ecma335;
-
-namespace Activity.Application.Services.User.Create;
+﻿namespace Activity.Application.Services.Activity;
 
 public class GetActivityByUserIdHandler : IRequestHandler<GetActivityByUserIdRequest, IEnumerable<GetActivityByUserIdResponse>>
 {

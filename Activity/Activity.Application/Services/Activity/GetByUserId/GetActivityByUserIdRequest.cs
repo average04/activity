@@ -1,4 +1,4 @@
-﻿namespace Activity.Application.Services.User.Create;
+﻿namespace Activity.Application.Services.Activity;
 
 public record GetActivityByUserIdRequest(Guid Id)
     : IRequest<IEnumerable<GetActivityByUserIdResponse>>;
