@@ -26,7 +26,12 @@ namespace Activity.Infrastructure.Data.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
+                        .HasColumnType("char(36)")
+                        .HasColumnOrder(0);
+
+                    b.Property<double>("AveragePace")
+                        .HasColumnType("double")
+                        .HasColumnOrder(7);
 
                     b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime(6)");
@@ -35,10 +40,16 @@ namespace Activity.Infrastructure.Data.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<double>("Distance")
-                        .HasColumnType("double");
+                        .HasColumnType("double")
+                        .HasColumnOrder(5);
+
+                    b.Property<TimeSpan>("Duration")
+                        .HasColumnType("time(6)")
+                        .HasColumnOrder(6);
 
                     b.Property<DateTime>("EndTime")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime(6)")
+                        .HasColumnOrder(4);
 
                     b.Property<DateTime?>("LastModified")
                         .HasColumnType("datetime(6)");
@@ -49,13 +60,16 @@ namespace Activity.Infrastructure.Data.Migrations
                     b.Property<string>("Location")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(255)")
+                        .HasColumnOrder(2);
 
                     b.Property<DateTime>("StartTime")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime(6)")
+                        .HasColumnOrder(3);
 
                     b.Property<Guid>("UserId")
-                        .HasColumnType("char(36)");
+                        .HasColumnType("char(36)")
+                        .HasColumnOrder(1);
 
                     b.HasKey("Id");
 
@@ -68,10 +82,21 @@ namespace Activity.Infrastructure.Data.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
+                        .HasColumnType("char(36)")
+                        .HasColumnOrder(0);
+
+                    b.Property<int>("Age")
+                        .HasColumnType("int")
+                        .HasColumnOrder(5);
+
+                    b.Property<decimal>("BMI")
+                        .HasPrecision(5, 2)
+                        .HasColumnType("decimal(5,2)")
+                        .HasColumnOrder(6);
 
                     b.Property<DateOnly>("BirthDate")
-                        .HasColumnType("date");
+                        .HasColumnType("date")
+                        .HasColumnOrder(4);
 
                     b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime(6)");
@@ -81,7 +106,8 @@ namespace Activity.Infrastructure.Data.Migrations
 
                     b.Property<decimal>("Height")
                         .HasPrecision(5, 2)
-                        .HasColumnType("decimal(5,2)");
+                        .HasColumnType("decimal(5,2)")
+                        .HasColumnOrder(3);
 
                     b.Property<DateTime?>("LastModified")
                         .HasColumnType("datetime(6)");
@@ -92,11 +118,13 @@ namespace Activity.Infrastructure.Data.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(255)")
+                        .HasColumnOrder(1);
 
                     b.Property<decimal>("Weight")
                         .HasPrecision(5, 2)
-                        .HasColumnType("decimal(5,2)");
+                        .HasColumnType("decimal(5,2)")
+                        .HasColumnOrder(2);
 
                     b.HasKey("Id");
 

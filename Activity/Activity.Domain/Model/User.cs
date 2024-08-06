@@ -13,6 +13,7 @@ public class User : Entity<Guid>
         {
             return CalculateAge(BirthDate);
         }
+        set { }
     }
 
     public decimal BMI
@@ -21,6 +22,7 @@ public class User : Entity<Guid>
         {
             return CalculateBMI(Weight, Height);
         }
+        set { }
     }
 
     private int CalculateAge(DateOnly birthDate)

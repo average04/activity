@@ -13,6 +13,7 @@ public class Activity : Entity<Guid>
         {
             return EndTime - StartTime;
         }
+        set { }
     }
     public double AveragePace
     {
@@ -20,5 +21,6 @@ public class Activity : Entity<Guid>
         {
             return Distance > 0 ? Duration.TotalMinutes / Distance : 0;
         }
+        set { }
     }
 }
