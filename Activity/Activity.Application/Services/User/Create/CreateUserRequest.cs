@@ -1,6 +1,4 @@
-﻿using Activity.Application.Dtos;
-
-namespace Activity.Application.Services.User.Create;
+﻿namespace Activity.Application.Services.User.Create;
 
 public record CreateUserRequest(string Name, decimal Weight, decimal Height, DateOnly BirthDate)
     : IRequest<CreateUserResponse>;

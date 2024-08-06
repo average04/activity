@@ -1,12 +1,10 @@
-﻿using Activity.Application.Dtos;
-using Activity.Domain.Abstractions;
-
-namespace Activity.Application.Services.User.Create;
+﻿namespace Activity.Application.Services.User.Create;
 
 public record GetUserCollectionRequest()
     : IRequest<IEnumerable<GetUserCollectionResponse>>;
 
 public record GetUserCollectionResponse(
+    Guid Id,
     string Name,
     decimal Weight,
     decimal Height,

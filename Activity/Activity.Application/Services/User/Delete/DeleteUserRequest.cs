@@ -1,6 +1,4 @@
-﻿using Activity.Application.Dtos;
-
-namespace Activity.Application.Services.User.Create;
+﻿namespace Activity.Application.Services.User.Create;
 
 public record DeleteUserRequest(Guid Id)
     : IRequest<Unit>;

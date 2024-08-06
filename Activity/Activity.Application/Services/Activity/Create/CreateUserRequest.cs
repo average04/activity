@@ -1,7 +1,4 @@
-﻿using Activity.Application.Dtos;
-using FluentValidation;
-
-namespace Activity.Application.Services.User.Create;
+﻿namespace Activity.Application.Services.User.Create;
 
 public record CreateActivityRequest(
     Guid UserId,

@@ -1,7 +1,4 @@
-﻿using Activity.Application.Dtos;
-using Activity.Domain.Abstractions;
-
-namespace Activity.Application.Services.User.Create;
+﻿namespace Activity.Application.Services.User.Create;
 
 public record GetUserByIdRequest(Guid Id)
     : IRequest<GetUserByIdResponse>;
@@ -12,7 +9,7 @@ public record GetUserByIdResponse(
     decimal Height,
     DateOnly BirthDate,
     int Age,
-    decimal BMI) : UserDto(Name, Weight, Height, BirthDate, Age, BMI);
+    decimal BMI);
 
 public class GetUserByIdRequestValidator : AbstractValidator<GetUserByIdRequest>
 {

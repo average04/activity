@@ -9,8 +9,6 @@
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Helper\" />
-    <Folder Include="Services\Activity\Delete\" />
-    <Folder Include="Services\Activity\GetById\" />
     <Folder Include="Services\Activity\GetCollection\" />
     <Folder Include="Services\Activity\Update\" />
   </ItemGroup>

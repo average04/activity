@@ -1,6 +1,4 @@
-﻿using Activity.Application.Dtos;
-
-namespace Activity.Application.Services.User.Create;
+﻿namespace Activity.Application.Services.User.Create;
 
 public record UpdateUserRequest(Guid Id, string Name, decimal Weight, decimal Height, DateOnly BirthDate)
     : IRequest<UpdateUserResponse>;
@@ -11,7 +9,7 @@ public record UpdateUserResponse(
     decimal Height,
     DateOnly BirthDate,
     int Age,
-    decimal BMI) : UserDto(Name, Weight, Height, BirthDate, Age, BMI);
+    decimal BMI);
 
 public class UpdateUserRequestValidator : AbstractValidator<UpdateUserRequest>
 {

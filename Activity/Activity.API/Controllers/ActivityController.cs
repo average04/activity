@@ -27,5 +27,33 @@ public class ActivityController : BaseController
 
         return Created($"{Request.Path.Value}/{response.Id}", response);
     }
+
+    /// <summary>
+    /// Delete activity
+    /// </summary>
+    /// <param name="id">Activity Id</param>
+    /// <returns></returns>
+    [HttpDelete("activity/{id}")]
+    public async Task<IActionResult> DeleteActivity([FromRoute] Guid id)
+    {
+        var request = new DeleteActivityRequest(id);
+        var response = await Mediator.Send(request);
+
+        return NoContent();
+    }
+
+    /// <summary>
+    /// Get activity by id
+    /// </summary>
+    /// <param name="id">Activity id</param>
+    /// <returns></returns>
+    [HttpGet("activity/{id}")]
+    public async Task<IActionResult> GetActivityById([FromRoute] Guid id)
+    {
+        var request = new GetActivityByIdRequest(id);
+        var response = await Mediator.Send(request);
+
+        return Ok(response);
+    }
 }
 
