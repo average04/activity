@@ -55,5 +55,19 @@ public class ActivityController : BaseController
 
         return Ok(response);
     }
+
+    /// <summary>
+    /// Get activities by user id
+    /// </summary>
+    /// <param name="id">User id</param>
+    /// <returns></returns>
+    [HttpGet("user/{id}/activity")]
+    public async Task<IActionResult> GetActivityByUserId([FromRoute] Guid id)
+    {
+        var request = new GetActivityByUserIdRequest(id);
+        var response = await Mediator.Send(request);
+
+        return response != null ? Ok(response) : NoContent();
+    }
 }
 
