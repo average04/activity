@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-
-namespace Activity.Application;
+﻿namespace Activity.Application;
 
 public static class ServiceExtension
 {

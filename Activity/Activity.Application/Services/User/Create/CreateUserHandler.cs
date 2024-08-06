@@ -1,8 +1,4 @@
-﻿
-
-using Activity.Application.Helper;
-
-namespace Activity.Application.Services.User.Create;
+﻿namespace Activity.Application.Services.User.Create;
 
 public class CreateActionByProcessIdHandler : IRequestHandler<CreateUserRequest, CreateUserResponse>
 {

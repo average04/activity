@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace Activity.Infrastructure;
+namespace Activity.Infrastructure.Data;
 
 public class ApplicationDbContext : DbContext, IApplicationDbContext
 {

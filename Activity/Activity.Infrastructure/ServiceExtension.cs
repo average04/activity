@@ -1,9 +1,4 @@
-﻿using Activity.Infrastructure.Data.Interceptors;
-using Microsoft.EntityFrameworkCore.Diagnostics;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-
-namespace Activity.Infrastructure;
+﻿namespace Activity.Infrastructure;
 public static class ServiceExtension
 {
     public static IServiceCollection AddInfrastructureServices

@@ -1,4 +1,6 @@
-﻿namespace Activity.Infrastructure;
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace Activity.Infrastructure.Data;
 
 public interface IApplicationDbContext
 {

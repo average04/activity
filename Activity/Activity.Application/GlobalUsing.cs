@@ -8,5 +8,5 @@ global using MediatR;
 global using Microsoft.Extensions.Configuration;
 global using Activity.Application.Behavior;
 global using Microsoft.Extensions.DependencyInjection;
-global using Activity.Infrastructure;
+global using Activity.Infrastructure.Data;
 global using System.Reflection;
