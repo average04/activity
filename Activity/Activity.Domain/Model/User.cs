@@ -43,6 +43,6 @@ public class User : Entity<Guid>
         {
             throw new ArgumentException("Height must be greater than zero.");
         }
-        return weight / (height * height);
+        return (weight / (height * height)) * 10000;
     }
 }
