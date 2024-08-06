@@ -19,7 +19,7 @@ public class UserController : BaseController
     /// </summary>
     /// <param name="request">Create user request</param>
     /// <returns></returns>
-    [HttpPost(Name = "user")]
+    [HttpPost("user")]
     public async Task<IActionResult> CreateUser([FromBody] CreateUserRequest request)
     {
         var response = await Mediator.Send(request);
@@ -31,7 +31,7 @@ public class UserController : BaseController
     /// </summary>
     /// <param name="id">User id</param>
     /// <returns></returns>
-    [HttpDelete(Name = "user/{id}")]
+    [HttpDelete("user/{id}")]
     public async Task<IActionResult> DeleteUser(Guid id)
     {
         await Mediator.Send(new DeleteUserRequest(id));
@@ -43,11 +43,22 @@ public class UserController : BaseController
     /// </summary>
     /// <param name="id">User id</param>
     /// <returns></returns>
-    [HttpGet(Name = "user/{id}")]
+    [HttpGet("user/{id}")]
     public async Task<IActionResult> GetUserById(Guid id)
     {
         var result = await Mediator.Send(new GetUserByIdRequest(id));
         return Ok(result);
+    }
+
+    /// <summary>
+    /// Get all users
+    /// </summary>
+    /// <returns></returns>
+    [HttpGet("user")]
+    public async Task<IActionResult> GetUsers()
+    {
+        var result = await Mediator.Send(new GetUserCollectionRequest());
+        return result != null ? Ok(result) : NoContent();
     }
 }
 

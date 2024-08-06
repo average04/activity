@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Services\Activity\" />
-    <Folder Include="Services\User\GetCollection\" />
     <Folder Include="Services\User\Update\" />
   </ItemGroup>
 
