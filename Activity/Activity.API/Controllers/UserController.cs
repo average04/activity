@@ -1,4 +1,5 @@
 using Activity.API.Controllers.Base;
+using Activity.API.ExceptionHandler.Exceptions;
 using Activity.Application.Services.User.Create;
 using Microsoft.AspNetCore.Mvc;
 

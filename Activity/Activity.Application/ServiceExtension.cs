@@ -5,7 +5,7 @@ namespace Activity.Application;
 public static class ServiceExtension
 {
     public static IServiceCollection AddApplicationServices
-        (this IServiceCollection services, IConfiguration configuration)
+        (this IServiceCollection services)
     {
         services.AddMediatR(config =>
         {
