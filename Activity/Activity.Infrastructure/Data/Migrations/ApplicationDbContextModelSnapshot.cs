@@ -75,7 +75,8 @@ namespace Activity.Infrastructure.Data.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<decimal>("Height")
-                        .HasColumnType("decimal(65,30)");
+                        .HasPrecision(5, 2)
+                        .HasColumnType("decimal(5,2)");
 
                     b.Property<DateTime?>("LastModified")
                         .HasColumnType("datetime(6)");
@@ -89,7 +90,8 @@ namespace Activity.Infrastructure.Data.Migrations
                         .HasColumnType("varchar(255)");
 
                     b.Property<decimal>("Weight")
-                        .HasColumnType("decimal(65,30)");
+                        .HasPrecision(5, 2)
+                        .HasColumnType("decimal(5,2)");
 
                     b.HasKey("Id");
 
