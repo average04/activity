@@ -19,7 +19,7 @@ public class Activity : Entity<Guid>
     {
         get
         {
-            return Distance > 0 ? Duration.TotalMinutes / Distance : 0;
+            return Math.Round(Distance > 0 ? Duration.TotalMinutes / Distance : 0, 2);
         }
         set { }
     }

@@ -38,6 +38,16 @@ public class UserController : BaseController
         return NoContent();
     }
 
-
+    /// <summary>
+    /// Get user by id
+    /// </summary>
+    /// <param name="id">User id</param>
+    /// <returns></returns>
+    [HttpGet(Name = "user/{id}")]
+    public async Task<IActionResult> GetUserById(Guid id)
+    {
+        var result = await Mediator.Send(new GetUserByIdRequest(id));
+        return Ok(result);
+    }
 }
 
