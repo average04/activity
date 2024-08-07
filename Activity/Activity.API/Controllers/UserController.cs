@@ -65,8 +65,9 @@ public class UserController : BaseController
     /// <summary>
     /// Update user
     /// </summary>
+    /// <param name="id">User id</param>
     /// <param name="body">Update user request body</param>
-    /// <returns></returns>
+    /// <returns></returns>ss
     [HttpPut("user/{id}")]
     public async Task<IActionResult> UpdateUsers([FromRoute]Guid id, [FromBody]UpdateUserRequestBody body)
     {
