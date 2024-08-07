@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace Activity.API.UnitTest.Service.User
 {
     public class CreateUserUnitTest : TestFixtures
