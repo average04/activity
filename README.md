@@ -1,9 +1,10 @@
 # Activity API
-Created using clean architecture design
+Designed using clean architecture
 
 Database : MySQL
+
 Library used : 
--EFCore
--MediatR
--FluentValidation
--Mapster
+- EFCore
+- MediatR
+- FluentValidation
+- Mapster
