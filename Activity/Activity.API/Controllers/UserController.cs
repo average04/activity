@@ -65,12 +65,13 @@ public class UserController : BaseController
     /// <summary>
     /// Update user
     /// </summary>
-    /// <param name="updateUser">Update user request</param>
+    /// <param name="body">Update user request body</param>
     /// <returns></returns>
-    [HttpPut("user")]
-    public async Task<IActionResult> GetUsers(UpdateUserRequest updateUser)
+    [HttpPut("user/{id}")]
+    public async Task<IActionResult> UpdateUsers([FromRoute]Guid id, [FromBody]UpdateUserRequestBody body)
     {
-        var result = await Mediator.Send(updateUser);
+        var request = new UpdateUserRequest(id, body.Name, body.Weight, body.Height, body.BirthDate);
+        var result = await Mediator.Send(request);
         return Ok(result);
     }
 }
