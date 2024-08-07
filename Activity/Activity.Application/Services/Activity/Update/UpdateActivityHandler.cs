@@ -13,6 +13,9 @@ public class UpdateActivityHandler : IRequestHandler<UpdateActivityRequest, Upda
         var activity = await _dbContext.Activities.FindAsync(request.Id);
         if (activity == null) throw new NotFoundException("Activity", request.Id);
 
+        var user = await _dbContext.Users.FindAsync(request.UserId);
+        if (user == null) throw new NotFoundException("User", request.UserId);
+
         activity.UserId = request.UserId;
         activity.Location = request.Location;
         activity.StartTime = request.StartTime;

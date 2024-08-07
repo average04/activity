@@ -1,6 +1,6 @@
 ﻿using Activity.Application.Exceptions;
 
-namespace Activity.API.UnitTest.Service.User
+namespace Activity.API.UnitTest.Services.User
 {
     public class UpdateUserUnitTest : TestFixtures
     {
