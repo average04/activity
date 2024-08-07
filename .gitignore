@@ -8,3 +8,5 @@ Activity/Activity.Application/bin/
 Activity/Activity.Domain/bin/
 Activity/Activity.Infrastructure/bin/
 Activity/Activity.API/Logs/
+Activity/Activity.API.UnitTest/bin/
+Activity/Activity.API.UnitTest/obj/
