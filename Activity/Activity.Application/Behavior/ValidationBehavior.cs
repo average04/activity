@@ -1,8 +1,7 @@
-﻿
+﻿namespace Activity.Application.Behavior;
 
-namespace Activity.Application.Behavior;
 public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-      where TRequest : IRequest<TResponse>
+    where TRequest : IRequest<TResponse>
 {
     private readonly IEnumerable<IValidator<TRequest>> _validators;
 

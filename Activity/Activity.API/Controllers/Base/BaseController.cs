@@ -4,7 +4,7 @@ namespace Activity.API.Controllers.Base;
 
 [ApiController]
 [Produces("application/json")]
-[Route("[controller]")]
+[Route("api/v1/")]
 public class BaseController : ControllerBase
 {
     private IMediator _mediator;

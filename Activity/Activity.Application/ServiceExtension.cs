@@ -12,6 +12,8 @@ public static class ServiceExtension
             config.AddOpenBehavior(typeof(LoggingBehavior<,>));
         });
 
+        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+       
         return services;
     }
 }
