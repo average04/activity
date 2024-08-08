@@ -11,3 +11,4 @@ global using System.Reflection;
 global using Activity.Application.Exceptions;
 global using Mapster;
 global using Microsoft.EntityFrameworkCore;
+global using Serilog;

@@ -2,21 +2,17 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Activity.Application.Behavior;
 
-public class LoggingBehavior<TRequest, TResponse>
-    (ILogger<LoggingBehavior<TRequest, TResponse>> logger)
+public class LoggingBehavior<TRequest, TResponse>()
     : IPipelineBehavior<TRequest, TResponse>
     where TRequest : notnull, IRequest<TResponse>
     where TResponse : notnull
 {
     public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
     {
-        logger.LogInformation("[START] Handle request={Request} - Response={Response} - RequestData={RequestData}",
+        Log.Information("[START] Handle request={Request} - Response={Response} - RequestData={RequestData}",
             typeof(TRequest).Name, typeof(TResponse).Name, request);
 
         var timer = new Stopwatch();
@@ -27,10 +23,10 @@ public class LoggingBehavior<TRequest, TResponse>
         timer.Stop();
         var timeTaken = timer.Elapsed;
         if (timeTaken.Seconds > 3) // if the request is greater than 3 seconds, then log the warnings
-            logger.LogWarning("[PERFORMANCE] The request {Request} took {TimeTaken} seconds.",
+            Log.Warning("[PERFORMANCE] The request {Request} took {TimeTaken} seconds.",
                 typeof(TRequest).Name, timeTaken.Seconds);
 
-        logger.LogInformation("[END] Handled {Request} with {Response}", typeof(TRequest).Name, typeof(TResponse).Name);
+        Log.Information("[END] Handled {Request} with {Response}", typeof(TRequest).Name, typeof(TResponse).Name);
         return response;
     }
 }

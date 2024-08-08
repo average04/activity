@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Activity.API.ExceptionHandler;
 
@@ -54,7 +53,15 @@ public class CustomExceptionHandler : IExceptionHandler
         if (exception is ValidationException validationException)
         {
             problemDetails.Extensions.Add("ValidationErrors", validationException.Errors);
+
+            Log.Error(exception, "Bad request information {RequestMethod} {RequestPath} {statusCode}", context.Request.Method, context.Request.Path, context.Response.StatusCode);
         }
+        else if (exception is NotFoundException)
+            Log.Error(exception, "Not found request information {RequestMethod} {RequestPath} {statusCode}", context.Request.Method, context.Request.Path, context.Response.StatusCode);
+        else if (exception is BadRequestException)
+            Log.Error(exception, "Bad request information {RequestMethod} {RequestPath} {statusCode}", context.Request.Method, context.Request.Path, context.Response.StatusCode);
+        else
+            Log.Fatal(exception, "Unhandled exception information {RequestMethod} {RequestPath} {statusCode}", context.Request.Method, context.Request.Path, context.Response.StatusCode);
 
         await context.Response.WriteAsJsonAsync(problemDetails, cancellationToken: cancellationToken);
         return true;
