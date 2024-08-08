@@ -1,5 +1,6 @@
 # Activity API
 Designed using clean architecture
+
 Code first approach
 
 Database : MySQL
